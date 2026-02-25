@@ -6,12 +6,12 @@ import type {
 } from 'n8n-workflow';
 
 export class WavixApiApi implements ICredentialType {
-	name = 'wavixApiApi';
+	name = 'wavixApi';
 
-	displayName = 'Wavix Api API';
+	displayName = 'Wavix API';
 
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-wavix-api?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/wavix/n8n-nodes-wavix-api?tab=readme-ov-file';
 
 	properties: INodeProperties[] = [
 		{
@@ -35,8 +35,8 @@ export class WavixApiApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.wavix.com',
-			url: '/v1/user',
+			baseURL: '={{$parameter.baseUrl}}',
+			url: '/v1/profile',
 		},
 	};
 }
