@@ -1,16 +1,15 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import { smsDescription } from './resources/sms';
 
 export class WavixApi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wavix Api',
 		name: 'wavixApi',
-		icon: { light: 'file:wavixApi.svg', dark: 'file:wavixApi.dark.svg' },
+		icon: { light: 'file:logo.svg', dark: 'file:logo.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Wavix Api API',
+		description: 'Interact with the Wavix API',
 		defaults: {
 			name: 'Wavix Api',
 		},
@@ -19,7 +18,7 @@ export class WavixApi implements INodeType {
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [{ name: 'wavixApiApi', required: true }],
 		requestDefaults: {
-			baseURL: 'https://api.wavix.com',
+			baseURL: '={{$parameter.baseUrl}}',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -27,24 +26,27 @@ export class WavixApi implements INodeType {
 		},
 		properties: [
 			{
+				displayName: 'Base URL',
+				name: 'baseUrl',
+				type: 'string',
+				default: 'https://api.wavix.com',
+				placeholder: 'https://api.wavix.com',
+				description: 'Base URL of the Wavix API',
+			},
+			{
 				displayName: 'Resource',
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
-					},
-					{
-						name: 'Company',
-						value: 'company',
+						name: 'Sms',
+						value: 'sms',
 					},
 				],
-				default: 'user',
+				default: 'sms',
 			},
-			...userDescription,
-			...companyDescription,
+			...smsDescription
 		],
 	};
 }
