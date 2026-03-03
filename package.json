@@ -1,11 +1,16 @@
 {
   "name": "n8n-nodes-wavix-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community node for the Wavix API",
   "license": "MIT",
   "homepage": "https://wavix.com",
-  "author": { "name": "Wavix", "email": "support@wavix.com" },
-  "keywords": ["n8n-community-node-package"],
+  "author": {
+    "name": "Wavix",
+    "email": "support@wavix.com"
+  },
+  "keywords": [
+    "n8n-community-node-package"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Wavix/n8n-nodes-wavix-api.git"
@@ -19,12 +24,18 @@
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
-    "credentials": ["dist/credentials/WavixApi.credentials.js"],
-    "nodes": ["dist/nodes/WavixApi/WavixApi.node.js"]
+    "credentials": [
+      "dist/credentials/WavixApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/WavixApi/WavixApi.node.js"
+    ]
   },
   "devDependencies": {
     "@n8n/node-cli": "*",
@@ -33,5 +44,7 @@
     "release-it": "^19.0.4",
     "typescript": "5.9.2"
   },
-  "peerDependencies": { "n8n-workflow": "*" }
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
 }
