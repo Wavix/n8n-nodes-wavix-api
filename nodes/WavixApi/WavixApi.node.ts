@@ -5,7 +5,7 @@ export class WavixApi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wavix Api',
 		name: 'wavixApi',
-		icon: { light: 'file:logo.svg', dark: 'file:logo.svg' },
+		icon: 'file:logo.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
@@ -16,7 +16,7 @@ export class WavixApi implements INodeType {
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
-		credentials: [{ name: 'wavixApiApi', required: true }],
+		credentials: [{ name: 'wavixApi', required: true }],
 		requestDefaults: {
 			baseURL: '={{$parameter.baseUrl}}',
 			headers: {
@@ -40,8 +40,8 @@ export class WavixApi implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Sms',
-						value: 'sms',
+					name: 'SMS',
+					value: 'sms',
 					},
 				],
 				default: 'sms',

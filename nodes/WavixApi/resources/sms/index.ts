@@ -75,10 +75,6 @@ export const smsDescription: INodeProperties[] = [
 				value: 'off',
 			},
 			{
-				name: 'Auto',
-				value: 'auto',
-			},
-			{
 				name: 'Custom',
 				value: 'custom',
 			},
@@ -106,26 +102,6 @@ export const smsDescription: INodeProperties[] = [
 			},
 		},
 		description: 'Custom idempotency key sent in the request header',
-	},
-	{
-		displayName: 'Auto Idempotency Key',
-		name: 'idempotencyAutoKey',
-		type: 'string',
-		displayOptions: {
-			show: {
-				...showOnlyForSendSms,
-				idempotencyMode: ['auto'],
-			},
-		},
-		default: '={{$execution.id + "-" + $itemIndex}}',
-		routing: {
-			request: {
-				headers: {
-					'Idempotency-Key': '={{$value}}',
-				},
-			},
-		},
-		description: 'Auto-generated key based on execution and item index',
 	},
 	{
 		displayName: 'From',
