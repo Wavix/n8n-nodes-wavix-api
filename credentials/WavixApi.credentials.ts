@@ -5,10 +5,12 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class WavixApiApi implements ICredentialType {
+export class WavixApi implements ICredentialType {
 	name = 'wavixApi';
 
 	displayName = 'Wavix API';
+
+	icon = 'file:logo.svg' as const;
 
 	// Link to your community node's README
 	documentationUrl = 'https://github.com/wavix/n8n-nodes-wavix-api?tab=readme-ov-file';
@@ -35,7 +37,7 @@ export class WavixApiApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$parameter.baseUrl}}',
+			baseURL: 'https://api.wavix.com',
 			url: '/v1/profile',
 		},
 	};
