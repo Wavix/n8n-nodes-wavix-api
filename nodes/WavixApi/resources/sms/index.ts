@@ -38,8 +38,8 @@ export const smsDescription: INodeProperties[] = [
 			{
 				name: 'Get SMS',
 				value: 'getSmsByUuid',
-				action: 'Get SMS by UUID',
-				description: 'Get SMS by UUID',
+				action: 'Get SMS by ID',
+				description: 'Get SMS by ID',
 				routing: {
 					request: {
 						method: 'GET',
