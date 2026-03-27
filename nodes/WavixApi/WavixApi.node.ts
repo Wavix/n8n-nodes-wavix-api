@@ -3,15 +3,15 @@ import { smsDescription } from './resources/sms';
 
 export class WavixApi implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Wavix Api',
+		displayName: 'Wavix',
 		name: 'wavixApi',
 		icon: 'file:logo.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Wavix API',
+		description: 'Send and retrieve SMS messages',
 		defaults: {
-			name: 'Wavix Api',
+			name: 'Wavix',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
