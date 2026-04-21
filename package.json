@@ -1,7 +1,7 @@
 {
 	"name": "n8n-nodes-wavix-api",
-	"version": "0.1.3",
-	"description": "n8n community node for the Wavix API",
+	"version": "0.1.4",
+	"description": "Send and retrieve SMS/MMS messages using Wavix",
 	"license": "MIT",
 	"homepage": "https://wavix.com",
 	"author": {
