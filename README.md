@@ -90,6 +90,7 @@ Email [support@wavix.com](mailto:support@wavix.com), or open an issue in the [Gi
 
 ## Version history
 
+- **0.1.5** (November 2026): rewrote the README, updated the node description, and added the license file. No change to how the node works.
 - **0.1.4** (April 2026): updated operation and field descriptions.
 - **0.1.2 and 0.1.3** (March 2026): first releases, with Send SMS and Get SMS.
 
