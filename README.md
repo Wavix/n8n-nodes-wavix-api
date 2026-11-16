@@ -4,10 +4,27 @@ Send SMS from your n8n workflows with Wavix.
 
 This is the [Wavix](https://wavix.com) node for [n8n](https://n8n.io). We build and maintain it, and n8n verified it.
 
+## Contents
+
+- [What the node does](#what-the-node-does)
+- [Before you start](#before-you-start)
+- [Install](#install)
+- [Credentials](#credentials)
+- [Compatibility](#compatibility)
+- [Send your first SMS](#send-your-first-sms)
+- [Send SMS fields](#send-sms-fields)
+- [Receive delivery statuses in n8n](#receive-delivery-statuses-in-n8n)
+- [Use with AI agents](#use-with-ai-agents)
+- [Troubleshooting](#troubleshooting)
+- [Support](#support)
+- [Resources](#resources)
+- [Version history](#version-history)
+- [License](#license)
+
 ## What the node does
 
 - **Send SMS**: send a text message from your Wavix number or Sender ID.
-- **Get SMS**: retrieve a message by its UUID to check its details and status.
+- **Get SMS**: check a sent message's delivery status by its `message_id`.
 - **Idempotency**: add an idempotency key to Send SMS, so a repeated run with the same key doesn't send a second message.
 - **Delivery-status callbacks**: add a callback URL to Send SMS, and Wavix posts the message's delivery status to it.
 
