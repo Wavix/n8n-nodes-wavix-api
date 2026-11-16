@@ -9,7 +9,7 @@ export class WavixApi implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Send and retrieve SMS/MMS messages using Wavix',
+		description: 'Send SMS from your n8n workflows with Wavix',
 		defaults: {
 			name: 'Wavix',
 		},
