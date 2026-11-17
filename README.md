@@ -67,7 +67,7 @@ The node returns the message, including its `message_id` and a `status` of `acce
 | From | Yes | The number or Sender ID the message is sent from |
 | To | Yes | The recipient's phone number |
 | Message Text | Yes | The text of the message |
-| Idempotency | No | Set to **Custom** and enter a key to send it in the `Idempotency-Key` header |
+| Idempotency | No | Set to **Custom** and enter a key to send it in the `X-Cio-Idempotency-Key` header |
 | Callback URL | No | The URL that receives delivery-status callbacks for this message |
 
 ## Receive delivery statuses in n8n
