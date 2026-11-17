@@ -1,4 +1,5 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { version } from '../../package.json';
 import { smsDescription } from './resources/sms';
 
 export class WavixApi implements INodeType {
@@ -9,7 +10,7 @@ export class WavixApi implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Send and retrieve SMS/MMS messages using Wavix',
+		description: 'Send SMS from your n8n workflows with Wavix',
 		defaults: {
 			name: 'Wavix',
 		},
@@ -22,6 +23,7 @@ export class WavixApi implements INodeType {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
+				'User-Agent': `wavix-n8n/${version}`,
 			},
 		},
 		properties: [
