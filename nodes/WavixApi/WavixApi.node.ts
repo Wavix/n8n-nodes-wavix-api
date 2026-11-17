@@ -1,4 +1,5 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { version } from '../../package.json';
 import { smsDescription } from './resources/sms';
 
 export class WavixApi implements INodeType {
@@ -22,6 +23,7 @@ export class WavixApi implements INodeType {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
+				'User-Agent': `wavix-n8n/${version}`,
 			},
 		},
 		properties: [
