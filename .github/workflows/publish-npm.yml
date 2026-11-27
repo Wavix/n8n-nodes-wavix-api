@@ -1,11 +1,21 @@
+# Publishes the package to npm when a version tag is pushed.
+#
+# A merge to main does not publish. See RELEASING.md for the release steps.
+#
+# Do not rename this file. npm trusted publishing is set up for the workflow
+# name "publish-npm.yml"; under another name the publish step fails until the
+# trusted publisher is changed on npmjs.com.
+
 name: Publish to NPM
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      # Matches 0.2.0, 1.0.0, 1.0.0-rc.1. Tags have no "v" prefix.
+      - '*.*.*'
 
 permissions:
+  # Needed for npm trusted publishing and the provenance statement.
   id-token: write
   contents: read
 
@@ -19,7 +29,16 @@ jobs:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Check that the tag matches the package version
+        run: |
+          version=$(node -p "require('./package.json').version")
+          if [ "$GITHUB_REF_NAME" != "$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $version"
+            exit 1
+          fi
+
       - run: npm ci
+      - run: npm run lint
       - run: npm run build
 
       - name: Publish to npm
