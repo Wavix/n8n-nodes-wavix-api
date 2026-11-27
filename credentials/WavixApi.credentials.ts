@@ -4,6 +4,7 @@ import type {
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
+import { version } from '../package.json';
 
 export class WavixApi implements ICredentialType {
 	name = 'wavixApi';
@@ -39,6 +40,9 @@ export class WavixApi implements ICredentialType {
 		request: {
 			baseURL: 'https://api.wavix.com',
 			url: '/v1/profile',
+			headers: {
+				'User-Agent': `wavix-n8n/${version}`,
+			},
 		},
 	};
 }

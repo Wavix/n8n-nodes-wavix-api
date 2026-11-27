@@ -31,7 +31,7 @@ export const smsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '/v3/messages/idempotent',
+						url: '/v3/messages',
 					},
 				},
 			},
@@ -97,7 +97,7 @@ export const smsDescription: INodeProperties[] = [
 		routing: {
 			request: {
 				headers: {
-					'Idempotency-Key': '={{$value}}',
+					'X-Cio-Idempotency-Key': '={{$value}}',
 				},
 			},
 		},
