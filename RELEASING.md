@@ -41,7 +41,7 @@ Run these on an up-to-date `main` with a clean working tree. Replace `0.2.0` wit
    npm version 0.2.0 --no-git-tag-version
    ```
 
-2. In `CHANGELOG.md`, move the entries under **Unreleased** to a new `0.2.0` section with today's date.
+2. In `CHANGELOG.md`, move the entries under **Unreleased** to a new `0.2.0` section with today's date. Add a one-line summary of the version to **Version history** in `README.md`.
 
 3. Commit, tag and push:
 

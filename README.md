@@ -2,7 +2,7 @@
 
 Send SMS from your n8n workflows with Wavix.
 
-This is the [Wavix](https://wavix.com) node for [n8n](https://n8n.io). We build and maintain it, and n8n verified it.
+This is the official [Wavix](https://wavix.com) node for [n8n](https://n8n.io). We build and maintain it.
 
 ## Contents
 
@@ -25,7 +25,7 @@ This is the [Wavix](https://wavix.com) node for [n8n](https://n8n.io). We build 
 
 - **Send SMS**: send a text message from your Wavix number or Sender ID.
 - **Get SMS**: check a sent message's delivery status by its `message_id`.
-- **Idempotency**: add an idempotency key to Send SMS, so a repeated run with the same key doesn't send a second message.
+- **Idempotency**: add an idempotency key to Send SMS, so a repeated run with the same key returns the first message and doesn't send a second one.
 - **Delivery-status callbacks**: add a callback URL to Send SMS, and Wavix posts the message's delivery status to it.
 
 ## Before you start
@@ -70,6 +70,8 @@ The node returns the message, including its `message_id` and a `status` of `acce
 | Idempotency | No | Set to **Custom** and enter a key to send it in the `Idempotency-Key` header |
 | Callback URL | No | The URL that receives delivery-status callbacks for this message |
 
+With an idempotency key, a repeated Send SMS with the same key and the same field values returns the first message and sends nothing. Use it when a workflow can run a step twice, such as with **Retry On Fail**. Wavix keeps a key for 24 hours. The same key with different field values returns a `409` error.
+
 ## Receive delivery statuses in n8n
 
 1. In a separate workflow, add a **Webhook** node and set **HTTP Method** to **POST**.
@@ -107,7 +109,8 @@ Email [support@wavix.com](mailto:support@wavix.com), or open an issue in the [Gi
 
 ## Version history
 
-- **0.1.5** (November 2026): rewrote the README, updated the node description, and added the license file. No change to how the node works.
+This list has the versions published on npm. For changes that aren't released yet, see the [changelog](CHANGELOG.md).
+
 - **0.1.4** (April 2026): updated operation and field descriptions.
 - **0.1.2 and 0.1.3** (March 2026): first releases, with Send SMS and Get SMS.
 
