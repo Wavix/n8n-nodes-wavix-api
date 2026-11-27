@@ -59,7 +59,7 @@ Run these on an up-to-date `main` with a clean working tree. Replace `0.2.0` wit
    gh release create 0.2.0 --title 0.2.0 --notes "<the 0.2.0 section of CHANGELOG.md>"
    ```
 
-Don't use `npm run release` yet. With the installed `@n8n/node-cli` (0.20.0) it also publishes from your machine, without provenance. n8n requires publishing from GitHub Actions with provenance.
+Don't use `npm run release` for these steps. It regenerates `CHANGELOG.md` from commit messages, which replaces the entries written for users.
 
 ## After the release
 
