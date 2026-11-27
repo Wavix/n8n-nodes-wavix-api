@@ -8,6 +8,7 @@ What changed in each version of `n8n-nodes-wavix-api`, newest first. See [RELEAS
 - The node sends a `wavix-n8n/<version>` User-Agent header with each request to Wavix.
 - Changed the node description shown in n8n to "Send SMS from your n8n workflows with Wavix".
 - Added the MIT license file.
+- The node is now listed under the Communication category in n8n.
 
 ## 0.1.4 (2026-04-21)
 
